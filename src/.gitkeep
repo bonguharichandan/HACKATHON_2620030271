@@ -1,0 +1,50 @@
+import java.util.Scanner;
+
+public class Question1 {
+
+    public static void display(int family, double waterConsumed, int houseNumber, char waterUsage) {
+        System.out.println("number of family members = " + family + 
+                           "\nwater consumed in liters = " + waterConsumed + 
+                           "\nhouse number = " + houseNumber + 
+                           "\nwater usage status = " + waterUsage);
+    }
+
+    public static int calculateTotal(int morningUsage, int eveningUsage) {
+        return morningUsage + eveningUsage;
+    }
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        System.out.println("enter number of family members");
+        int family = sc.nextInt();
+
+        System.out.println("enter water consumed in liters");
+        double waterConsumed = sc.nextDouble(); 
+
+        System.out.println("enter house number");
+        int houseNumber = sc.nextInt();
+
+        System.out.println("enter water usage status");
+        char waterUsage = sc.next().charAt(0);
+
+        display(family, waterConsumed, houseNumber, waterUsage);
+
+        if (waterConsumed <= 500) {
+            System.out.println("Water Bill : 100");
+        } else {
+            System.out.println("Water Bill : 200");
+        }
+
+        System.out.println("enter morning water usage");
+        int morningUsage = sc.nextInt();
+
+        System.out.println("enter evening water usage");
+        int eveningUsage = sc.nextInt();
+
+        int totalConsumption = calculateTotal(morningUsage, eveningUsage);
+        System.out.println("Total Water Consumption = " + totalConsumption);
+
+        sc.close(); 
+    }
+}
